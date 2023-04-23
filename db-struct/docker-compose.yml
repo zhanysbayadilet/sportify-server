@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  db:
+    image: 'postgres:13.1-alpine'
+    ports:
+      - "5436:5432"
+    container_name: sportify-db
+    environment:
+      - POSTGRES_USER=adilet
+      - POSTGRES_PASSWORD=050302
+      - POSTGRES_DB=sportify-db

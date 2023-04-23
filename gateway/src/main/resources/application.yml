@@ -1,0 +1,36 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /sportify
+  shutdown: graceful
+
+spring:
+  application:
+    name: gateway
+  datasource:
+    url: jdbc:postgresql://${DB_URL:localhost}:${DB_PORT:5436}/${DB_NAME:sportify-db}
+    username: ${DB_USER:adilet}
+    password: ${DB_PASSWORD:050302}
+  jpa:
+    show-sql: true
+diploma-security:
+  app:
+    jwtSecret: diplomaSecurityKey
+    jwtExpirationMs: 86400000
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 30000
+    socket-timeout-millis: 30000
+  routes:
+    administration-service:
+      path: /administration/**
+      url: ${ADMINISTRATION_URL:http://localhost:8083}
+      stripPrefix: false
+      sensitiveHeaders: Cookie,Set-Cookie
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}

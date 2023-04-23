@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Adilet" id="1">
+        <sqlFile path="classpath:db/init/11.04.2023_init_tables.sql" relativeToChangelogFile="false" splitStatements="true"/>
+    </changeSet>
+    <changeSet author="Adilet" id="2">
+        <sqlFile path="classpath:db/init/22.04.2023_team_and_relations.sql" relativeToChangelogFile="false" splitStatements="true"/>
+    </changeSet>
+    <changeSet author="Adilet" id="3">
+        <sqlFile path="classpath:db/init/23.04.2023_edit_city.sql" relativeToChangelogFile="false" splitStatements="true"/>
+    </changeSet>
+    <changeSet author="Adilet" id="4">
+        <sqlFile path="classpath:db/init/23.04.2023_edit_category.sql" relativeToChangelogFile="false" splitStatements="true"/>
+    </changeSet>
+    <changeSet author="Adilet" id="5">
+        <sqlFile path="classpath:db/init/23.04.2023_add_type_category.sql" relativeToChangelogFile="false" splitStatements="true"/>
+    </changeSet>
+</databaseChangeLog>
